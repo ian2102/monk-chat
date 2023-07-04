@@ -1,0 +1,26 @@
+[package]
+name = "monk-chat"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = "0.10"
+bevy_egui = "0.20"
+bevy_matchbox = "0.6"
+urlencoding = "2.1.2"
+chrono = "0.4.26"
+rand = "0.8.5"
+
+[profile.release]
+codegen-units = 1
+debug = false
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true
+
+# Enable high optimizations for dependencies
+[profile.dev.package."*"]
+opt-level = 3
